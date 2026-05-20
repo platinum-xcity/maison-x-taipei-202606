@@ -1,0 +1,1645 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>大槻響 Maison X Special in TAIPEI 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,500;1,400;1,600&family=Noto+Sans+TC:wght@300;400;500&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+/* ── Custom Properties ─────────────────────────────── */
+:root {
+  --gold:        #C8A04A;
+  --gold-light:  #E8D5A3;
+  --gold-dark:   #8A6E30;
+  --gold-glow:   rgba(200,160,74,0.25);
+  --cream:       #FEF6ED;
+  --cream-2:     #FDF0E4;
+  --rose:        #E8B4B8;
+  --rose-light:  #F8E8EA;
+  --blush:       #F5DEDE;
+  --text:        #2C1A0E;
+  --text-mid:    #5C4030;
+  --text-light:  #9C8070;
+  --white:       #FFFFFF;
+  --border:      rgba(200,160,74,0.35);
+  --shadow:      0 4px 24px rgba(200,160,74,0.18);
+  --radius:      14px;
+  --transition:  0.3s cubic-bezier(.4,0,.2,1);
+}
+
+/* ── Reset ─────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Noto Sans TC', 'Noto Sans JP', sans-serif;
+  background: var(--cream);
+  color: var(--text);
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+img { max-width: 100%; height: auto; }
+a { color: var(--gold); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ── Sparkle bg ─────────────────────────────────────── */
+body::before {
+  content: '';
+  position: fixed; inset: 0; z-index: -1;
+  background:
+    radial-gradient(ellipse at 20% 20%, rgba(248,228,234,0.6) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 10%, rgba(240,220,245,0.5) 0%, transparent 50%),
+    radial-gradient(ellipse at 60% 80%, rgba(230,240,255,0.4) 0%, transparent 50%),
+    radial-gradient(ellipse at 10% 70%, rgba(245,230,220,0.5) 0%, transparent 50%),
+    linear-gradient(160deg, #FEF6ED 0%, #FDF0F5 50%, #F5F0FE 100%);
+  pointer-events: none;
+}
+
+/* ── Navigation ─────────────────────────────────────── */
+nav {
+  position: sticky; top: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 14px 32px;
+  background: rgba(254,246,237,0.88);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+  box-shadow: 0 2px 16px var(--gold-glow);
+}
+.nav-logo {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: var(--text);
+}
+.nav-logo .logo-x { color: var(--gold); }
+.lang-switcher { display: flex; gap: 6px; }
+.lang-btn {
+  border: 1.5px solid var(--border);
+  background: transparent;
+  color: var(--text-mid);
+  font-family: inherit;
+  font-size: 0.8rem;
+  font-weight: 500;
+  padding: 5px 13px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: var(--transition);
+  letter-spacing: 0.06em;
+}
+.lang-btn:hover { border-color: var(--gold); color: var(--gold); }
+.lang-btn.active {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: var(--white);
+}
+
+/* ── Hero ────────────────────────────────────────────── */
+.hero {
+  position: relative;
+  display: flex; flex-direction: column; align-items: center;
+  padding: 60px 24px 40px;
+  text-align: center;
+  overflow: hidden;
+}
+.hero-image-wrap {
+  position: relative;
+  width: min(480px, 90vw);
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 12px 48px rgba(200,160,74,0.22), 0 4px 16px rgba(200,100,130,0.12);
+  margin-bottom: 32px;
+}
+.hero-image-wrap::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(to bottom, transparent 60%, rgba(254,246,237,0.5) 100%);
+  pointer-events: none;
+}
+.hero-image-wrap img {
+  width: 100%; display: block;
+  object-fit: cover;
+}
+/* Fallback gradient when image not present */
+.hero-image-placeholder {
+  width: min(480px, 90vw);
+  height: min(600px, 80vw);
+  border-radius: 24px;
+  background: linear-gradient(135deg, #F5DEDE 0%, #EDD5F0 30%, #D5E5F0 60%, #E8F0D5 100%);
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 12px 48px rgba(200,160,74,0.22);
+  margin-bottom: 32px;
+  font-family: 'Cinzel', serif;
+  font-size: 1.2rem;
+  color: var(--text-light);
+  letter-spacing: 0.1em;
+  text-align: center;
+  padding: 24px;
+}
+.hero-badge {
+  font-family: 'Cinzel', serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.25em;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.hero-title-jp {
+  font-family: 'Noto Sans TC', 'Noto Sans JP', serif;
+  font-size: clamp(2.2rem, 6vw, 3.4rem);
+  font-weight: 400;
+  color: var(--text);
+  margin-bottom: 4px;
+  letter-spacing: 0.06em;
+}
+.hero-title-en {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: clamp(1.1rem, 3vw, 1.6rem);
+  color: var(--gold-dark);
+  margin-bottom: 2px;
+  letter-spacing: 0.08em;
+}
+.hero-title-in {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(1.6rem, 5vw, 2.8rem);
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: var(--text);
+  margin-bottom: 20px;
+}
+.hero-date {
+  display: inline-flex; align-items: center; gap: 12px;
+  font-family: 'Cinzel', serif;
+  font-size: clamp(0.95rem, 2.5vw, 1.15rem);
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  color: var(--gold);
+  margin-bottom: 10px;
+}
+.hero-date::before, .hero-date::after {
+  content: '✦';
+  font-size: 0.6em;
+  opacity: 0.7;
+}
+.hero-location {
+  font-size: 0.88rem;
+  color: var(--text-light);
+  letter-spacing: 0.04em;
+}
+.powered {
+  margin-top: 18px;
+  font-family: 'Cinzel', serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.3em;
+  color: var(--text-light);
+  text-transform: uppercase;
+}
+
+/* ── Countdown ───────────────────────────────────────── */
+.countdown-section {
+  background: linear-gradient(135deg, #2C1A0E 0%, #4A2C16 50%, #2C1A0E 100%);
+  padding: 36px 24px;
+  text-align: center;
+}
+.countdown-title {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.3em;
+  color: var(--gold-light);
+  text-transform: uppercase;
+  margin-bottom: 18px;
+  opacity: 0.85;
+}
+.countdown-grid {
+  display: flex; justify-content: center; align-items: flex-end;
+  gap: 8px; flex-wrap: wrap;
+}
+.cd-unit {
+  display: flex; flex-direction: column; align-items: center;
+  min-width: 68px;
+}
+.cd-num {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(2rem, 6vw, 2.8rem);
+  font-weight: 700;
+  color: var(--gold);
+  line-height: 1;
+  text-shadow: 0 0 20px var(--gold-glow);
+}
+.cd-label {
+  font-size: 0.68rem;
+  color: var(--gold-light);
+  letter-spacing: 0.2em;
+  margin-top: 5px;
+  opacity: 0.75;
+}
+.cd-sep {
+  font-family: 'Cinzel', serif;
+  font-size: 2rem;
+  color: var(--gold);
+  opacity: 0.4;
+  margin-bottom: 20px;
+  line-height: 1;
+}
+.sale-period {
+  margin-top: 20px;
+  font-size: 0.82rem;
+  color: var(--gold-light);
+  opacity: 0.8;
+  letter-spacing: 0.04em;
+}
+.sale-period strong { color: var(--gold); font-weight: 500; }
+
+/* ── Section shared ──────────────────────────────────── */
+.section {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 60px 24px;
+}
+.section-title {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.35em;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+.section-heading {
+  font-size: clamp(1.4rem, 4vw, 1.9rem);
+  font-weight: 500;
+  color: var(--text);
+  margin-bottom: 28px;
+  position: relative;
+}
+.section-heading::after {
+  content: '';
+  display: block;
+  width: 48px; height: 2px;
+  background: var(--gold);
+  margin-top: 12px;
+}
+.divider {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 48px 0;
+}
+
+/* ── About Section ───────────────────────────────────── */
+.about-desc {
+  font-size: 0.95rem;
+  color: var(--text-mid);
+  margin-bottom: 20px;
+  line-height: 1.8;
+}
+.member-badge {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: linear-gradient(135deg, var(--blush), var(--rose-light));
+  border: 1px solid var(--rose);
+  border-radius: 8px;
+  padding: 14px 20px;
+  font-size: 0.88rem;
+  color: var(--text-mid);
+  margin-bottom: 8px;
+}
+.member-badge strong { color: var(--gold-dark); }
+.join-link {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 10px 24px;
+  background: var(--gold);
+  color: var(--white);
+  border-radius: 24px;
+  font-size: 0.88rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  transition: var(--transition);
+  box-shadow: 0 4px 16px var(--gold-glow);
+}
+.join-link:hover {
+  background: var(--gold-dark);
+  transform: translateY(-1px);
+  text-decoration: none;
+  box-shadow: 0 6px 20px var(--gold-glow);
+}
+
+/* ── Process Steps ───────────────────────────────────── */
+.process-steps {
+  display: flex; flex-direction: column; gap: 0;
+  position: relative;
+}
+.process-steps::before {
+  content: '';
+  position: absolute;
+  left: 18px; top: 20px; bottom: 20px; width: 1.5px;
+  background: linear-gradient(to bottom, var(--gold), var(--rose), var(--gold));
+  opacity: 0.35;
+}
+.step {
+  display: flex; gap: 20px; align-items: flex-start;
+  padding: 14px 0;
+}
+.step-num {
+  flex-shrink: 0;
+  width: 38px; height: 38px;
+  background: var(--gold);
+  color: var(--white);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Cinzel', serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  box-shadow: 0 4px 12px var(--gold-glow);
+  position: relative; z-index: 1;
+}
+.step-text {
+  font-size: 0.92rem;
+  color: var(--text-mid);
+  line-height: 1.7;
+  padding-top: 8px;
+}
+
+/* ── Ticket Section ──────────────────────────────────── */
+.event-block {
+  margin-bottom: 52px;
+}
+.event-tag {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+  color: var(--white);
+  font-family: 'Cinzel', serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  padding: 5px 16px;
+  border-radius: 20px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+.event-name {
+  font-size: clamp(1.2rem, 3.5vw, 1.6rem);
+  font-weight: 500;
+  color: var(--text);
+  margin-bottom: 6px;
+}
+.event-subtitle {
+  font-size: 0.85rem;
+  color: var(--text-light);
+  margin-bottom: 20px;
+  letter-spacing: 0.06em;
+}
+.ticket-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+.ticket-card {
+  background: var(--white);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  padding: 22px 20px;
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+.ticket-card::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, var(--gold), var(--rose), var(--gold));
+  opacity: 0;
+  transition: var(--transition);
+}
+.ticket-card:hover { border-color: var(--gold); box-shadow: var(--shadow); }
+.ticket-card:hover::before { opacity: 1; }
+.ticket-card.vvip { border-color: rgba(200,160,74,0.6); background: linear-gradient(135deg, #FFFDF5, #FFF9E8); }
+.ticket-card.vip { border-color: rgba(200,160,74,0.4); }
+.ticket-tier {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+.ticket-price {
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+.ticket-limit {
+  font-size: 0.75rem;
+  color: var(--rose);
+  margin-bottom: 14px;
+  letter-spacing: 0.04em;
+}
+.ticket-benefits {
+  list-style: none;
+  font-size: 0.83rem;
+  color: var(--text-mid);
+  line-height: 1.7;
+}
+.ticket-benefits li::before {
+  content: '✦ ';
+  color: var(--gold);
+  font-size: 0.6em;
+  vertical-align: middle;
+}
+.ticket-session {
+  font-size: 0.75rem;
+  color: var(--text-light);
+  margin-bottom: 4px;
+  letter-spacing: 0.04em;
+}
+
+.set-tickets {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 14px;
+  margin-top: 14px;
+}
+.set-card {
+  background: linear-gradient(135deg, #FEF6ED, #F5E8D8);
+  border: 1.5px solid var(--gold);
+  border-radius: var(--radius);
+  padding: 18px 20px;
+}
+.set-title {
+  font-family: 'Cinzel', serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: var(--gold-dark);
+  margin-bottom: 4px;
+}
+.set-price {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 6px;
+}
+.set-note { font-size: 0.8rem; color: var(--text-mid); }
+
+/* ── Notes ───────────────────────────────────────────── */
+.notes-list {
+  list-style: none;
+  display: flex; flex-direction: column; gap: 12px;
+}
+.notes-list li {
+  display: flex; gap: 12px; align-items: flex-start;
+  font-size: 0.9rem;
+  color: var(--text-mid);
+  line-height: 1.65;
+}
+.note-icon {
+  flex-shrink: 0;
+  width: 22px; height: 22px;
+  background: var(--gold);
+  color: var(--white);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.6rem;
+  margin-top: 2px;
+}
+
+/* ── Form ─────────────────────────────────────────────── */
+.form-wrap {
+  background: var(--white);
+  border: 1.5px solid var(--border);
+  border-radius: 20px;
+  padding: clamp(24px, 5vw, 52px);
+  box-shadow: 0 8px 40px rgba(200,160,74,0.1);
+}
+.form-group { margin-bottom: 22px; }
+.form-label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text);
+  margin-bottom: 7px;
+  letter-spacing: 0.03em;
+}
+.form-label .req { color: var(--rose); margin-left: 3px; }
+.form-hint {
+  font-size: 0.75rem;
+  color: var(--text-light);
+  margin-bottom: 6px;
+  letter-spacing: 0.02em;
+}
+.form-input, .form-textarea {
+  width: 100%;
+  border: 1.5px solid rgba(200,160,74,0.3);
+  border-radius: 8px;
+  padding: 12px 16px;
+  font-family: inherit;
+  font-size: 0.9rem;
+  color: var(--text);
+  background: var(--cream);
+  transition: var(--transition);
+  outline: none;
+}
+.form-input:focus, .form-textarea:focus {
+  border-color: var(--gold);
+  background: var(--white);
+  box-shadow: 0 0 0 3px var(--gold-glow);
+}
+.form-input::placeholder, .form-textarea::placeholder {
+  color: var(--text-light);
+  font-size: 0.85rem;
+}
+.form-textarea { resize: vertical; min-height: 100px; }
+
+/* Ticket Checkboxes */
+.ticket-sub-section {
+  margin-bottom: 28px;
+}
+.ticket-sub-title {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border);
+  display: flex; align-items: center; gap: 8px;
+}
+.ticket-sub-title .dot { color: var(--gold); }
+.checkbox-list { display: flex; flex-direction: column; gap: 10px; }
+.checkbox-item {
+  display: flex; align-items: flex-start; gap: 12px;
+  cursor: pointer;
+  padding: 10px 14px;
+  border: 1.5px solid transparent;
+  border-radius: 8px;
+  transition: var(--transition);
+}
+.checkbox-item:hover { background: var(--cream); border-color: var(--border); }
+.checkbox-item input[type="checkbox"] {
+  flex-shrink: 0;
+  width: 18px; height: 18px;
+  margin-top: 2px;
+  accent-color: var(--gold);
+  cursor: pointer;
+}
+.checkbox-label { font-size: 0.88rem; color: var(--text-mid); line-height: 1.5; }
+.checkbox-price { font-weight: 600; color: var(--gold-dark); }
+
+/* Form actions */
+.form-required-note {
+  font-size: 0.78rem;
+  color: var(--text-light);
+  margin-bottom: 20px;
+}
+.btn-submit {
+  width: 100%;
+  padding: 16px;
+  background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+  color: var(--white);
+  border: none;
+  border-radius: 50px;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: 0 6px 24px var(--gold-glow);
+}
+.btn-submit:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 32px rgba(200,160,74,0.35);
+}
+.btn-submit:active { transform: translateY(0); }
+
+/* ── Success Modal ───────────────────────────────────── */
+#success-modal {
+  display: none;
+  position: fixed; inset: 0; z-index: 999;
+  background: rgba(44,26,14,0.55);
+  backdrop-filter: blur(6px);
+  align-items: center; justify-content: center;
+}
+#success-modal.show { display: flex; }
+.modal-box {
+  background: var(--white);
+  border-radius: 24px;
+  padding: 48px 40px;
+  text-align: center;
+  max-width: 420px;
+  width: 90%;
+  box-shadow: 0 20px 60px rgba(44,26,14,0.2);
+  animation: fadeUp 0.4s ease;
+}
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.modal-icon {
+  width: 64px; height: 64px;
+  background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 20px;
+  font-size: 1.8rem;
+}
+.modal-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 12px;
+}
+.modal-msg {
+  font-size: 0.9rem;
+  color: var(--text-mid);
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
+.btn-close-modal {
+  padding: 12px 36px;
+  background: var(--gold);
+  color: var(--white);
+  border: none; border-radius: 24px;
+  font-family: inherit; font-size: 0.9rem;
+  cursor: pointer; transition: var(--transition);
+}
+.btn-close-modal:hover { background: var(--gold-dark); }
+
+/* ── Footer ──────────────────────────────────────────── */
+footer {
+  background: var(--text);
+  color: rgba(255,255,255,0.6);
+  text-align: center;
+  padding: 40px 24px;
+  font-size: 0.82rem;
+  line-height: 2;
+}
+footer .footer-logo {
+  font-family: 'Cinzel', serif;
+  font-size: 1rem;
+  letter-spacing: 0.2em;
+  color: var(--gold);
+  margin-bottom: 12px;
+}
+
+/* ── Responsive ──────────────────────────────────────── */
+@media (max-width: 600px) {
+  nav { padding: 12px 16px; }
+  .section { padding: 44px 16px; }
+  .ticket-grid { grid-template-columns: 1fr; }
+  .set-tickets { grid-template-columns: 1fr; }
+  .form-wrap { padding: 24px 18px; }
+  .cd-sep { display: none; }
+}
+
+/* ── Hero Desktop (left-right layout) ───────────────── */
+@media (min-width: 900px) {
+  .hero {
+    flex-direction: row;
+    align-items: center;
+    text-align: left;
+    padding: 64px 64px 64px;
+    gap: 56px;
+    max-width: 1120px;
+    margin: 0 auto;
+  }
+  .hero-image-wrap {
+    width: 380px;
+    flex-shrink: 0;
+    margin-bottom: 0;
+  }
+  .hero-image-placeholder {
+    width: 380px;
+    height: 520px;
+    flex-shrink: 0;
+    margin-bottom: 0;
+  }
+  .hero-text { flex: 1; }
+  .hero-date { justify-content: flex-start; }
+  .hero-date::before { display: none; }
+}
+
+/* ── Floating Register Button ────────────────────────── */
+.fab-register {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 500;
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+  color: var(--white);
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 6px 28px rgba(200,160,74,0.5), 0 2px 8px rgba(0,0,0,0.12);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Noto Sans TC', 'Noto Sans JP', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  line-height: 1.35;
+  transition: var(--transition);
+  text-align: center;
+  padding: 8px;
+}
+.fab-register:hover {
+  transform: translateY(-3px) scale(1.07);
+  box-shadow: 0 12px 36px rgba(200,160,74,0.6), 0 4px 12px rgba(0,0,0,0.15);
+}
+.fab-register:active { transform: scale(0.97); }
+.fab-register .fab-icon { font-size: 1.15rem; margin-bottom: 2px; }
+</style>
+</head>
+<body>
+
+<!-- Hidden iframe for Google Forms submission -->
+<iframe name="hidden_iframe" id="hidden_iframe" style="display:none"></iframe>
+
+<!-- ── Navigation ── -->
+<nav>
+  <div class="nav-logo">MAISON <span class="logo-x">X</span></div>
+  <div class="lang-switcher">
+    <button class="lang-btn active" data-lang="zh" onclick="setLang('zh')">中</button>
+    <button class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
+    <button class="lang-btn" data-lang="ja" onclick="setLang('ja')">日</button>
+  </div>
+</nav>
+
+<!-- ── Hero ── -->
+<section class="hero">
+  <!-- Replace main-visual.jpg with your poster image in the same folder -->
+  <div class="hero-image-wrap" id="hero-img-wrap" style="display:none">
+    <img src="main-visual.jpg" alt="大槻響 Maison X Special in TAIPEI" id="hero-img">
+  </div>
+  <div class="hero-image-placeholder" id="hero-placeholder">
+    <!-- Image placeholder: place main-visual.jpg in same folder -->
+    ✦ MAISON X ✦<br><br>
+    <small style="font-size:0.75rem; opacity:0.6;">Place main-visual.jpg<br>in the same folder</small>
+  </div>
+
+  <div class="hero-text">
+    <p class="hero-badge">✦ Maison X Special ✦</p>
+    <div class="hero-title-jp" data-i18n="hero_name">大槻響</div>
+    <div class="hero-title-en"><em>Maison X Special</em></div>
+    <div class="hero-title-in">IN TAIPEI</div>
+    <div class="hero-date" data-i18n="hero_date">2026.06.20 – 06.21</div>
+    <p class="hero-location" data-i18n="hero_location">📍 台北市內（活動地點將於報名成功後另行通知）</p>
+    <p class="powered">Powered by XCITY</p>
+  </div>
+</section>
+
+<!-- ── Countdown ── -->
+<section class="countdown-section">
+  <p class="countdown-title" data-i18n="countdown_title">先行販售截止倒數</p>
+  <div class="countdown-grid">
+    <div class="cd-unit">
+      <div class="cd-num" id="cd-days">--</div>
+      <div class="cd-label" data-i18n="cd_days">天</div>
+    </div>
+    <div class="cd-sep">:</div>
+    <div class="cd-unit">
+      <div class="cd-num" id="cd-hours">--</div>
+      <div class="cd-label" data-i18n="cd_hours">時</div>
+    </div>
+    <div class="cd-sep">:</div>
+    <div class="cd-unit">
+      <div class="cd-num" id="cd-mins">--</div>
+      <div class="cd-label" data-i18n="cd_mins">分</div>
+    </div>
+    <div class="cd-sep">:</div>
+    <div class="cd-unit">
+      <div class="cd-num" id="cd-secs">--</div>
+      <div class="cd-label" data-i18n="cd_secs">秒</div>
+    </div>
+  </div>
+  <p class="sale-period">
+    <strong data-i18n="sale_period_label">先行販售期間：</strong>
+    <span data-i18n="sale_period">2026/05/20（三）20:00 ～ 2026/05/23（六）11:59（台灣時間 GMT+8）</span>
+  </p>
+</section>
+
+<!-- ── About ── -->
+<section class="section">
+  <p class="section-title" data-i18n="section_about_tag">Event Info</p>
+  <h2 class="section-heading" data-i18n="section_about">關於活動</h2>
+  <p class="about-desc" data-i18n="about_desc">
+    感謝您對 Maison X 的支持。本次活動採「事前報名審核制」，請詳閱以下內容後再進行填寫。
+  </p>
+  <div class="member-badge">
+    ⭐ <strong data-i18n="member_only">本次報名僅限 XCITY 有效付費會員申請</strong>
+  </div><br>
+  <a href="https://faws.xcity.jp/app/tc_info/" target="_blank" class="join-link" data-i18n="join_link">立即加入會員 →</a>
+
+  <hr class="divider">
+
+  <p class="section-title" data-i18n="section_process_tag">How to Register</p>
+  <h2 class="section-heading" data-i18n="section_process">報名流程</h2>
+  <div class="process-steps">
+    <div class="step">
+      <div class="step-num">①</div>
+      <div class="step-text" data-i18n="step1">填寫網頁中的報名表單</div>
+    </div>
+    <div class="step">
+      <div class="step-num">②</div>
+      <div class="step-text" data-i18n="step2">主辦單位確認：XCITY 付費會員資格、票種與場次、報名資訊</div>
+    </div>
+    <div class="step">
+      <div class="step-num">③</div>
+      <div class="step-text" data-i18n="step3">審核通過者，將由 Maison X 管理局寄送「專屬付款連結」至您的 Email 信箱</div>
+    </div>
+    <div class="step">
+      <div class="step-num">④</div>
+      <div class="step-text" data-i18n="step4">請於指定期限內完成信用卡付款</div>
+    </div>
+    <div class="step">
+      <div class="step-num">⑤</div>
+      <div class="step-text" data-i18n="step5">完成付款後，將收到「報名成功通知信」，即視為正式報名完成</div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Tickets ── -->
+<section class="section" style="padding-top:0">
+  <p class="section-title" data-i18n="section_tickets_tag">Ticket Info</p>
+  <h2 class="section-heading" data-i18n="section_tickets">票券介紹</h2>
+
+  <!-- Camera Fever Time -->
+  <div class="event-block">
+    <span class="event-tag" data-i18n="cft_date_tag">6/20 &amp; 6/21</span>
+    <div class="event-name" data-i18n="cft_title">✦ Camera Fever Time ✦</div>
+    <div class="event-subtitle" data-i18n="cft_subtitle">紀念攝影會 ─ 共3場次</div>
+    <div class="ticket-grid">
+      <div class="ticket-card vip">
+        <div class="ticket-tier" data-i18n="vip_label">VIP Ticket</div>
+        <div class="ticket-price">NT$ 7,500</div>
+        <div class="ticket-limit" data-i18n="cft_vip_limit">每場限定10名</div>
+        <ul class="ticket-benefits">
+          <li data-i18n="cft_vip_b1">個別交流時間 3 分鐘</li>
+          <li data-i18n="cft_vip_b2">手機影片拍攝（30秒）</li>
+          <li data-i18n="cft_vip_b3">雙人拍立得 1 枚</li>
+          <li data-i18n="cft_vip_b4">Pose 選擇：臉頰貼貼 / 甜蜜擁抱 / 親密勾手</li>
+        </ul>
+      </div>
+      <div class="ticket-card">
+        <div class="ticket-tier" data-i18n="gen_label">一般 Ticket</div>
+        <div class="ticket-price">NT$ 3,500</div>
+        <div class="ticket-limit" data-i18n="cft_gen_limit">每場限定15名</div>
+        <ul class="ticket-benefits">
+          <li data-i18n="cft_gen_b1">個別交流時間 1 分鐘</li>
+          <li data-i18n="cft_gen_b2">雙人拍立得 1 枚</li>
+          <li data-i18n="cft_gen_b3">Pose 選擇：勾指 / 愛心Pose</li>
+        </ul>
+      </div>
+    </div>
+    <div class="set-tickets">
+      <div class="set-card">
+        <div class="set-title">✦ VIP Full Set</div>
+        <div class="set-price">NT$ 21,000</div>
+        <div class="set-note" data-i18n="cft_vip_set_note">包含三場 VIP Ticket + VIP 全通特典</div>
+      </div>
+      <div class="set-card">
+        <div class="set-title">✦ General Full Set</div>
+        <div class="set-price">NT$ 9,000</div>
+        <div class="set-note" data-i18n="cft_gen_set_note">包含三場 Camera Fever Time 一般 Ticket</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Gorgeous Party Night -->
+  <div class="event-block">
+    <span class="event-tag" data-i18n="gpn_date_tag">6/20 SATURDAY</span>
+    <div class="event-name" data-i18n="gpn_title">✦ Gorgeous Party Night ✦</div>
+    <div class="event-subtitle" data-i18n="gpn_subtitle">華麗夜宴</div>
+    <div class="ticket-grid">
+      <div class="ticket-card vvip">
+        <div class="ticket-tier">VVIP</div>
+        <div class="ticket-price">NT$ 10,000</div>
+        <div class="ticket-limit" data-i18n="gpn_vvip_limit">限定3名</div>
+        <ul class="ticket-benefits">
+          <li data-i18n="gpn_vvip_b1">最前排席位</li>
+          <li data-i18n="gpn_vvip_b2">活動乾杯權</li>
+          <li data-i18n="gpn_vvip_b3">Original Champagne（無酒精）</li>
+          <li data-i18n="gpn_vvip_b4">High Touch 見送會</li>
+          <li data-i18n="gpn_vvip_b5">Solo 拍立得 1 枚</li>
+          <li data-i18n="gpn_vvip_b6">活動後個別交流 3 分鐘</li>
+        </ul>
+      </div>
+      <div class="ticket-card vip">
+        <div class="ticket-tier" data-i18n="vip_label">VIP Ticket</div>
+        <div class="ticket-price">NT$ 6,000</div>
+        <div class="ticket-limit" data-i18n="gpn_vip_limit">限定6名</div>
+        <ul class="ticket-benefits">
+          <li data-i18n="gpn_vip_b1">前方席位</li>
+          <li data-i18n="gpn_vip_b2">Original Champagne（無酒精）</li>
+          <li data-i18n="gpn_vip_b3">High Touch 見送會</li>
+          <li data-i18n="gpn_vip_b4">Solo 拍立得 1 枚</li>
+        </ul>
+      </div>
+      <div class="ticket-card">
+        <div class="ticket-tier" data-i18n="gen_label">一般 Ticket</div>
+        <div class="ticket-price">NT$ 2,500</div>
+        <div class="ticket-limit" data-i18n="gpn_gen_limit">限定20名</div>
+        <ul class="ticket-benefits">
+          <li data-i18n="gpn_gen_b1">入場資格</li>
+          <li data-i18n="gpn_gen_b2">High Touch 見送會</li>
+          <li data-i18n="gpn_gen_b3">Solo 拍立得 1 枚</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Secret After Party -->
+  <div class="event-block">
+    <span class="event-tag" data-i18n="sap_date_tag">6/21 SUNDAY</span>
+    <div class="event-name" data-i18n="sap_title">✦ Secret After Party ✦</div>
+    <div class="event-subtitle" data-i18n="sap_subtitle">慶功餐會</div>
+    <div class="ticket-grid" style="max-width:300px">
+      <div class="ticket-card vip">
+        <div class="ticket-tier">Ticket</div>
+        <div class="ticket-price">NT$ 6,000</div>
+        <div class="ticket-limit" data-i18n="sap_limit">限定10名</div>
+        <ul class="ticket-benefits">
+          <li data-i18n="sap_b1">Premium Dinner 參與資格</li>
+          <li data-i18n="sap_b2">餐後手機雙人合影 1 枚</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Registration Form ── -->
+<section class="section" id="form-section">
+  <p class="section-title" data-i18n="section_form_tag">Registration</p>
+  <h2 class="section-heading" data-i18n="section_form">報名表</h2>
+  <p class="form-required-note" data-i18n="form_required">* 為必填欄位，請勿填寫密碼</p>
+
+  <div class="form-wrap">
+    <form
+      id="regForm"
+      action="https://docs.google.com/forms/d/e/1FAIpQLSdvMr2egR5TOxVt45aSv5DLiZJnsZD8uEInrkpbVBi1L2gvrQ/formResponse"
+      method="POST"
+      target="hidden_iframe"
+      onsubmit="handleSubmit()"
+    >
+
+      <!-- Personal Info -->
+      <div class="form-group">
+        <label class="form-label" for="f-name">
+          <span data-i18n="form_name">姓名（本名）</span><span class="req">*</span>
+        </label>
+        <p class="form-hint" data-i18n="form_name_hint">現場進行本人身份核對</p>
+        <input class="form-input" type="text" id="f-name" name="entry.459445623"
+          required placeholder="" data-i18n-placeholder="form_name_ph">
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="f-email">
+          <span data-i18n="form_email">Email</span><span class="req">*</span>
+        </label>
+        <input class="form-input" type="email" id="f-email" name="entry.131568661"
+          required placeholder="your@email.com">
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="f-phone">
+          <span data-i18n="form_phone">聯絡電話</span><span class="req">*</span>
+        </label>
+        <input class="form-input" type="tel" id="f-phone" name="entry.1487894842"
+          required placeholder="+886 912 345 678" data-i18n-placeholder="form_phone_ph">
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="f-ig">
+          <span data-i18n="form_ig">Instagram 帳號</span>
+        </label>
+        <input class="form-input" type="text" id="f-ig" name="entry.775833818"
+          placeholder="@username">
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="f-xcity">
+          <span data-i18n="form_xcity">XCITY 會員 Email</span><span class="req">*</span>
+        </label>
+        <input class="form-input" type="email" id="f-xcity" name="entry.727870154"
+          required placeholder="" data-i18n-placeholder="form_xcity_ph">
+      </div>
+
+      <hr class="divider" style="margin:28px 0">
+
+      <!-- Camera Fever Time Tickets -->
+      <div class="ticket-sub-section">
+        <div class="ticket-sub-title">
+          <span class="dot">✦</span>
+          <span data-i18n="cft_title">Camera Fever Time</span>
+          <span style="font-weight:300;color:var(--text-light);font-size:0.8rem;" data-i18n="form_multi_hint">（可複選）</span>
+        </div>
+        <div class="checkbox-list" id="cft-checks">
+          <!-- Rendered by JS -->
+        </div>
+      </div>
+
+      <!-- Gorgeous Party Night Tickets -->
+      <div class="ticket-sub-section">
+        <div class="ticket-sub-title">
+          <span class="dot">✦</span>
+          <span data-i18n="gpn_title_short">Gorgeous Party Night</span>
+          <span style="font-weight:300;color:var(--text-light);font-size:0.8rem;" data-i18n="form_multi_hint">（可複選）</span>
+        </div>
+        <div class="checkbox-list" id="gpn-checks">
+          <!-- Rendered by JS -->
+        </div>
+      </div>
+
+      <!-- Secret After Party Tickets -->
+      <div class="ticket-sub-section">
+        <div class="ticket-sub-title">
+          <span class="dot">✦</span>
+          <span data-i18n="sap_title_short">Secret After Party</span>
+        </div>
+        <div class="checkbox-list" id="sap-checks">
+          <!-- Rendered by JS -->
+        </div>
+      </div>
+
+      <hr class="divider" style="margin:28px 0">
+
+      <!-- Notes -->
+      <div class="form-group">
+        <label class="form-label" for="f-notes">
+          <span data-i18n="form_notes">備考欄</span>
+        </label>
+        <p class="form-hint" data-i18n="form_notes_hint">如有同行者資訊、特殊需求，請於此填寫</p>
+        <textarea class="form-textarea" id="f-notes" name="entry.1443947797"
+          rows="4" placeholder="" data-i18n-placeholder="form_notes_ph"></textarea>
+      </div>
+
+      <button type="submit" class="btn-submit" data-i18n="form_submit">提交報名 ✦</button>
+    </form>
+  </div>
+</section>
+
+<!-- ── Notes (below registration form) ── -->
+<div style="max-width:860px; margin:0 auto; padding:0 24px 60px;">
+  <div style="background: linear-gradient(135deg, #FFF9F5, #FEF4F4); border-radius:20px; padding: 40px 32px;">
+    <p class="section-title" data-i18n="section_notes_tag">Important Notes</p>
+    <h2 class="section-heading" data-i18n="section_notes">注意事項</h2>
+    <ul class="notes-list">
+      <li><div class="note-icon">!</div><span data-i18n="note1">本次會員先行販售僅限 XCITY 有效付費會員申請，若會員資格不符將視為無效報名</span></li>
+      <li><div class="note-icon">!</div><span data-i18n="note2">付款方式僅限信用卡支付</span></li>
+      <li><div class="note-icon">!</div><span data-i18n="note3">各票種數量有限，額滿為止</span></li>
+      <li><div class="note-icon">!</div><span data-i18n="note4">活動地點將於報名成功後另行通知</span></li>
+      <li><div class="note-icon">!</div><span data-i18n="note5">主辦單位保有活動內容調整與最終解釋權</span></li>
+    </ul>
+  </div>
+</div>
+
+<!-- ── Floating Register Button ── -->
+<button class="fab-register" onclick="document.getElementById('form-section').scrollIntoView({behavior:'smooth'})">
+  <span class="fab-icon">✦</span>
+  馬上報名
+</button>
+
+<!-- ── Footer ── -->
+<footer>
+  <div class="footer-logo">MAISON X</div>
+  <div data-i18n="footer_by">Presented by XCITY</div>
+  <div data-i18n="footer_prod">Maison X Production Team</div>
+  <div data-i18n="footer_coop">製作協力：大人國</div>
+  <div style="margin-top:16px; opacity:0.4; font-size:0.72rem;">
+    © 2026 Maison X · All Rights Reserved
+  </div>
+</footer>
+
+<!-- ── Success Modal ── -->
+<div id="success-modal">
+  <div class="modal-box">
+    <div class="modal-icon">✦</div>
+    <div class="modal-title" data-i18n="success_title">報名提交成功！</div>
+    <div class="modal-msg" data-i18n="success_msg">
+      感謝您的報名。主辦單位將儘快審核您的會員資格並通知後續付款事宜，請留意您的 Email 信箱。
+    </div>
+    <button class="btn-close-modal" onclick="closeModal()" data-i18n="modal_close">關閉</button>
+  </div>
+</div>
+
+<script>
+// ═══════════════════════════════════════════
+//  Translation Data
+// ═══════════════════════════════════════════
+const T = {
+  zh: {
+    hero_name: '大槻響',
+    hero_date: '2026.06.20 – 06.21',
+    hero_location: '📍 台北市內（活動地點將於報名成功後另行通知）',
+    countdown_title: '先行販售截止倒數',
+    cd_days: '天', cd_hours: '時', cd_mins: '分', cd_secs: '秒',
+    sale_period_label: '先行販售期間：',
+    sale_period: '2026/05/20（三）20:00 ～ 2026/05/23（六）11:59（台灣時間 GMT+8）',
+    section_about_tag: 'Event Info',
+    section_about: '關於活動',
+    about_desc: '感謝您對 Maison X 的支持。本次活動採「事前報名審核制」，請詳閱以下內容後再進行填寫。',
+    member_only: '本次報名僅限 XCITY 有效付費會員申請',
+    join_link: '立即加入會員 →',
+    section_process_tag: 'How to Register',
+    section_process: '報名流程',
+    step1: '填寫網頁中的報名表單',
+    step2: '主辦單位確認：XCITY 付費會員資格、票種與場次、報名資訊',
+    step3: '審核通過者，將由 Maison X 管理局寄送「專屬付款連結」至您的 Email 信箱',
+    step4: '請於指定期限內完成信用卡付款',
+    step5: '完成付款後，將收到「報名成功通知信」，即視為正式報名完成',
+    section_tickets_tag: 'Ticket Info',
+    section_tickets: '票券介紹',
+    cft_date_tag: '6/20 & 6/21',
+    cft_title: '✦ Camera Fever Time ✦',
+    cft_subtitle: '紀念攝影會 ─ 共3場次',
+    vip_label: 'VIP Ticket',
+    gen_label: '一般 Ticket',
+    cft_vip_limit: '每場限定10名',
+    cft_vip_b1: '個別交流時間 3 分鐘',
+    cft_vip_b2: '手機影片拍攝（30秒）',
+    cft_vip_b3: '雙人拍立得 1 枚',
+    cft_vip_b4: 'Pose 選擇：臉頰貼貼 / 甜蜜擁抱 / 親密勾手',
+    cft_gen_limit: '每場限定15名',
+    cft_gen_b1: '個別交流時間 1 分鐘',
+    cft_gen_b2: '雙人拍立得 1 枚',
+    cft_gen_b3: 'Pose 選擇：勾指 / 愛心Pose',
+    cft_vip_set_note: '包含三場 VIP Ticket + VIP 全通特典',
+    cft_gen_set_note: '包含三場 Camera Fever Time 一般 Ticket',
+    gpn_date_tag: '6/20 SATURDAY',
+    gpn_title: '✦ Gorgeous Party Night ✦',
+    gpn_title_short: 'Gorgeous Party Night',
+    gpn_subtitle: '華麗夜宴',
+    gpn_vvip_limit: '限定3名',
+    gpn_vvip_b1: '最前排席位', gpn_vvip_b2: '活動乾杯權',
+    gpn_vvip_b3: 'Original Champagne（無酒精）',
+    gpn_vvip_b4: 'High Touch 見送會',
+    gpn_vvip_b5: 'Solo 拍立得 1 枚',
+    gpn_vvip_b6: '活動後個別交流 3 分鐘',
+    gpn_vip_limit: '限定6名',
+    gpn_vip_b1: '前方席位', gpn_vip_b2: 'Original Champagne（無酒精）',
+    gpn_vip_b3: 'High Touch 見送會', gpn_vip_b4: 'Solo 拍立得 1 枚',
+    gpn_gen_limit: '限定20名',
+    gpn_gen_b1: '入場資格', gpn_gen_b2: 'High Touch 見送會', gpn_gen_b3: 'Solo 拍立得 1 枚',
+    sap_date_tag: '6/21 SUNDAY',
+    sap_title: '✦ Secret After Party ✦',
+    sap_title_short: 'Secret After Party',
+    sap_subtitle: '慶功餐會',
+    sap_limit: '限定10名',
+    sap_b1: 'Premium Dinner 參與資格',
+    sap_b2: '餐後手機雙人合影 1 枚',
+    section_notes_tag: 'Important Notes',
+    section_notes: '注意事項',
+    note1: '本次會員先行販售僅限 XCITY 有效付費會員申請，若會員資格不符將視為無效報名',
+    note2: '付款方式僅限信用卡支付',
+    note3: '各票種數量有限，額滿為止',
+    note4: '活動地點將於報名成功後另行通知',
+    note5: '主辦單位保有活動內容調整與最終解釋權',
+    section_form_tag: 'Registration',
+    section_form: '報名表',
+    form_required: '* 為必填欄位，請勿填寫密碼',
+    form_name: '姓名（本名）', form_name_hint: '現場進行本人身份核對',
+    form_name_ph: '請填寫真實姓名',
+    form_email: 'Email',
+    form_phone: '聯絡電話', form_phone_ph: '+886 912 345 678',
+    form_ig: 'Instagram 帳號（選填）',
+    form_xcity: 'XCITY 會員 Email', form_xcity_ph: 'XCITY 帳號所使用的 Email',
+    form_multi_hint: '（可複選）',
+    form_notes: '備考欄（選填）',
+    form_notes_hint: '如有同行者資訊、特殊需求，請於此填寫',
+    form_notes_ph: '請輸入需告知事項',
+    form_submit: '提交報名 ✦',
+    success_title: '報名提交成功！',
+    success_msg: '感謝您的報名。主辦單位將儘快審核您的會員資格並通知後續付款事宜，請留意您的 Email 信箱。',
+    modal_close: '關閉',
+    footer_by: 'Presented by XCITY',
+    footer_prod: 'Maison X Production Team',
+    footer_coop: '製作協力：大人國',
+  },
+
+  en: {
+    hero_name: 'Hibiki Ohtsuki',
+    hero_date: '2026.06.20 – 06.21',
+    hero_location: '📍 Taipei City (Venue details announced after registration)',
+    countdown_title: 'Pre-Sale Ends In',
+    cd_days: 'Days', cd_hours: 'Hrs', cd_mins: 'Min', cd_secs: 'Sec',
+    sale_period_label: 'Pre-Sale Period:',
+    sale_period: 'May 20 (Wed) 20:00 ～ May 23 (Sat) 11:59 (Taiwan Time GMT+8)',
+    section_about_tag: 'Event Info',
+    section_about: 'About the Event',
+    about_desc: 'Thank you for your support of Maison X. This event uses a pre-registration review system. Please read the following carefully before submitting.',
+    member_only: 'This pre-sale is exclusively for valid XCITY paid members',
+    join_link: 'Join Now →',
+    section_process_tag: 'How to Register',
+    section_process: 'Registration Process',
+    step1: 'Fill out the registration form on this page',
+    step2: 'Organizer verifies your XCITY paid membership, ticket type, and registration details',
+    step3: 'Approved applicants will receive a dedicated payment link sent to their registered email',
+    step4: 'Complete credit card payment within the specified deadline',
+    step5: 'Receive a confirmation email upon successful payment — registration is officially complete',
+    section_tickets_tag: 'Ticket Info',
+    section_tickets: 'Ticket Details',
+    cft_date_tag: '6/20 & 6/21',
+    cft_title: '✦ Camera Fever Time ✦',
+    cft_subtitle: 'Photo Sessions — 3 Sessions Total',
+    vip_label: 'VIP Ticket',
+    gen_label: 'General Ticket',
+    cft_vip_limit: 'Limited to 10 per session',
+    cft_vip_b1: '3-minute private interaction',
+    cft_vip_b2: 'Mobile video recording (30 sec)',
+    cft_vip_b3: 'Two-shot instant photo (1 piece)',
+    cft_vip_b4: 'Choose pose: Cheek-to-cheek / Sweet hug / Arm-in-arm',
+    cft_gen_limit: 'Limited to 15 per session',
+    cft_gen_b1: '1-minute private interaction',
+    cft_gen_b2: 'Two-shot instant photo (1 piece)',
+    cft_gen_b3: 'Choose pose: Pinky promise / Heart pose',
+    cft_vip_set_note: 'Includes VIP Tickets for all 3 sessions + Full-pass VIP bonus',
+    cft_gen_set_note: 'Includes General Tickets for all 3 Camera Fever Time sessions',
+    gpn_date_tag: '6/20 SATURDAY',
+    gpn_title: '✦ Gorgeous Party Night ✦',
+    gpn_title_short: 'Gorgeous Party Night',
+    gpn_subtitle: 'Luxury Evening Party',
+    gpn_vvip_limit: 'Limited to 3',
+    gpn_vvip_b1: 'Front row seating', gpn_vvip_b2: 'Event toast participation',
+    gpn_vvip_b3: 'Original Champagne (non-alcoholic)',
+    gpn_vvip_b4: 'High Touch farewell ceremony',
+    gpn_vvip_b5: 'Solo instant photo (1 piece)',
+    gpn_vvip_b6: '3-minute private chat after the event',
+    gpn_vip_limit: 'Limited to 6',
+    gpn_vip_b1: 'Priority front seating', gpn_vip_b2: 'Original Champagne (non-alcoholic)',
+    gpn_vip_b3: 'High Touch farewell ceremony', gpn_vip_b4: 'Solo instant photo (1 piece)',
+    gpn_gen_limit: 'Limited to 20',
+    gpn_gen_b1: 'Event entry', gpn_gen_b2: 'High Touch farewell ceremony', gpn_gen_b3: 'Solo instant photo (1 piece)',
+    sap_date_tag: '6/21 SUNDAY',
+    sap_title: '✦ Secret After Party ✦',
+    sap_title_short: 'Secret After Party',
+    sap_subtitle: 'Celebration Dinner',
+    sap_limit: 'Limited to 10',
+    sap_b1: 'Premium Dinner participation',
+    sap_b2: 'Two-shot mobile photo after dinner (1 piece)',
+    section_notes_tag: 'Important Notes',
+    section_notes: 'Important Notes',
+    note1: 'Pre-sale is exclusively for valid XCITY paid members. Invalid membership results in a rejected registration',
+    note2: 'Payment is accepted by credit card only',
+    note3: 'Tickets are limited; registration closes when full',
+    note4: 'Venue details will be announced after successful registration',
+    note5: 'The organizer reserves the right to adjust event content and holds final interpretation authority',
+    section_form_tag: 'Registration',
+    section_form: 'Registration Form',
+    form_required: '* Required fields — do not enter passwords',
+    form_name: 'Full Name (Legal)', form_name_hint: 'Identity will be verified at the venue',
+    form_name_ph: 'Your real name',
+    form_email: 'Email Address',
+    form_phone: 'Phone Number', form_phone_ph: '+886 912 345 678',
+    form_ig: 'Instagram Account (Optional)',
+    form_xcity: 'XCITY Member Email', form_xcity_ph: 'Email used for your XCITY account',
+    form_multi_hint: '(multiple selections allowed)',
+    form_notes: 'Notes (Optional)',
+    form_notes_hint: 'Companion info, special requests, or anything you\'d like to tell us',
+    form_notes_ph: 'Enter any additional information',
+    form_submit: 'Submit Registration ✦',
+    success_title: 'Registration Submitted!',
+    success_msg: 'Thank you for registering. The organizer will review your membership and contact you with payment details. Please check your email.',
+    modal_close: 'Close',
+    footer_by: 'Presented by XCITY',
+    footer_prod: 'Maison X Production Team',
+    footer_coop: 'Produced in cooperation with: 大人國',
+  },
+
+  ja: {
+    hero_name: '大槻ひびき',
+    hero_date: '2026.06.20 – 06.21',
+    hero_location: '📍 台北市内（会場詳細は申込完了後にご案内いたします）',
+    countdown_title: '先行販売締切まで',
+    cd_days: '日', cd_hours: '時間', cd_mins: '分', cd_secs: '秒',
+    sale_period_label: '先行販売期間：',
+    sale_period: '2026/05/20（水）20:00 ～ 2026/05/23（土）11:59（台湾時間 GMT+8）',
+    section_about_tag: 'Event Info',
+    section_about: 'イベントについて',
+    about_desc: 'Maison Xへのご支援、誠にありがとうございます。本イベントは「事前申込審査制」となっております。下記内容をご確認の上、お申し込みください。',
+    member_only: '本先行販売はXCITY有効有料会員限定です',
+    join_link: '今すぐ入会 →',
+    section_process_tag: 'How to Register',
+    section_process: '申込の流れ',
+    step1: 'このページの申込フォームよりお申し込み',
+    step2: '主催側にてXCITY有料会員資格・申込券種・申込情報を確認',
+    step3: '審査通過者へ、Maison X管理局より「専用決済リンク」を登録メールアドレス宛に送付',
+    step4: '指定期限内にクレジットカード決済をお願いいたします',
+    step5: '決済完了後、「申込完了メール」を送付し、正式申込完了となります',
+    section_tickets_tag: 'Ticket Info',
+    section_tickets: '券種ご案内',
+    cft_date_tag: '6/20 & 6/21',
+    cft_title: '✦ Camera Fever Time ✦',
+    cft_subtitle: '記念撮影会 ─ 全3部',
+    vip_label: 'VIP Ticket',
+    gen_label: '一般 Ticket',
+    cft_vip_limit: '各部限定10名',
+    cft_vip_b1: '個別交流時間 3分',
+    cft_vip_b2: '携帯撮影（30秒）',
+    cft_vip_b3: 'ツーショットチェキ1枚',
+    cft_vip_b4: 'ポーズ選択：頬寄せ / エアハグ / 腕組み',
+    cft_gen_limit: '各部限定15名',
+    cft_gen_b1: '個別交流時間 1分',
+    cft_gen_b2: 'ツーショットチェキ1枚',
+    cft_gen_b3: 'ポーズ選択：指切り / ハートポーズ',
+    cft_vip_set_note: 'Camera Fever Time VIP Ticket 三部通しセット ＋ VIP全通特典付き',
+    cft_gen_set_note: 'Camera Fever Time 一般 Ticket 三部通しセット',
+    gpn_date_tag: '6/20 SATURDAY',
+    gpn_title: '✦ Gorgeous Party Night ✦',
+    gpn_title_short: 'Gorgeous Party Night',
+    gpn_subtitle: '華麗夜宴',
+    gpn_vvip_limit: '限定3名',
+    gpn_vvip_b1: '最前列席', gpn_vvip_b2: '乾杯参加権',
+    gpn_vvip_b3: 'Original Champagne（ノンアルコール）',
+    gpn_vvip_b4: 'High Touchお見送り',
+    gpn_vvip_b5: 'ソロチェキ1枚',
+    gpn_vvip_b6: '終演後個別交流3分',
+    gpn_vip_limit: '限定6名',
+    gpn_vip_b1: '前方席', gpn_vip_b2: 'Original Champagne（ノンアルコール）',
+    gpn_vip_b3: 'High Touchお見送り', gpn_vip_b4: 'ソロチェキ1枚',
+    gpn_gen_limit: '限定20名',
+    gpn_gen_b1: '入場資格', gpn_gen_b2: 'High Touchお見送り', gpn_gen_b3: 'ソロチェキ1枚',
+    sap_date_tag: '6/21 SUNDAY',
+    sap_title: '✦ Secret After Party ✦',
+    sap_title_short: 'Secret After Party',
+    sap_subtitle: '慶功餐会',
+    sap_limit: '限定10名',
+    sap_b1: 'プレミアムディナー参加',
+    sap_b2: '終演後スマホツーショット撮影1枚',
+    section_notes_tag: 'Important Notes',
+    section_notes: '注意事項',
+    note1: '本先行販売はXCITY有効有料会員限定です。会員資格が確認できない場合、申込無効となります',
+    note2: 'お支払い方法はクレジットカード決済のみとなります',
+    note3: '各券種には数量制限がございます。満員になり次第締め切ります',
+    note4: 'イベント会場詳細は申込完了後に別途ご案内いたします',
+    note5: '主催者はイベント内容に関する最終決定権を有します',
+    section_form_tag: 'Registration',
+    section_form: '申込フォーム',
+    form_required: '* は必須項目です。パスワードは入力しないでください',
+    form_name: 'お名前（本名）', form_name_hint: '現場にてご本人様確認を行います',
+    form_name_ph: '本名をご入力ください',
+    form_email: 'メールアドレス',
+    form_phone: '電話番号', form_phone_ph: '+886 912 345 678',
+    form_ig: 'インスタグラムアカウント（任意）',
+    form_xcity: 'XCITY会員メールアドレス', form_xcity_ph: 'XCITY登録メールアドレス',
+    form_multi_hint: '（複数選択可）',
+    form_notes: '備考欄（任意）',
+    form_notes_hint: '同伴者情報、特別なご要望などがあればご記入ください',
+    form_notes_ph: '伝達事項があればご記入ください',
+    form_submit: '申込を送信 ✦',
+    success_title: '申込が完了しました！',
+    success_msg: 'お申し込みありがとうございます。主催側にて会員資格を確認の上、決済案内をお送りいたします。メールをご確認ください。',
+    modal_close: '閉じる',
+    footer_by: 'Presented by XCITY',
+    footer_prod: 'Maison X Production Team',
+    footer_coop: '製作協力：大人國',
+  }
+};
+
+// ═══════════════════════════════════════════
+//  Ticket Data (checkbox values = exact Google Form values)
+// ═══════════════════════════════════════════
+const TICKETS = {
+  cft: {
+    entry: 'entry.553283965',
+    items: [
+      {
+        value: '6/20 第一部 VIP （輕奢泳裝）OPEN 10:30／START 11:00（7,500 NTD）',
+        label: {
+          zh: '6/20 第一部 VIP ─ 輕奢泳裝｜OPEN 10:30 / START 11:00　NT$ 7,500',
+          en: '6/20 Session 1 VIP ─ Elegant Swimwear｜OPEN 10:30 / START 11:00　NT$ 7,500',
+          ja: '6/20 第1部 VIP ─ エレガント水着｜OPEN 10:30 / START 11:00　NT$ 7,500',
+        }
+      },
+      {
+        value: '6/20 第一部 一般 （輕奢泳裝）OPEN 10:30／START 11:00（3,500 NTD）',
+        label: {
+          zh: '6/20 第一部 一般 ─ 輕奢泳裝｜OPEN 10:30 / START 11:00　NT$ 3,500',
+          en: '6/20 Session 1 General ─ Elegant Swimwear｜OPEN 10:30 / START 11:00　NT$ 3,500',
+          ja: '6/20 第1部 一般 ─ エレガント水着｜OPEN 10:30 / START 11:00　NT$ 3,500',
+        }
+      },
+      {
+        value: '6/20 第二部 VIP （甜心女僕）OPEN 13:00／START 13:30（7,500 NTD）',
+        label: {
+          zh: '6/20 第二部 VIP ─ 甜心女僕｜OPEN 13:00 / START 13:30　NT$ 7,500',
+          en: '6/20 Session 2 VIP ─ Sweet Maid｜OPEN 13:00 / START 13:30　NT$ 7,500',
+          ja: '6/20 第2部 VIP ─ スイートメイド｜OPEN 13:00 / START 13:30　NT$ 7,500',
+        }
+      },
+      {
+        value: '6/20 第二部 一般票（甜心女僕）OPEN 13:00／START 13:30（3,500 NTD）',
+        label: {
+          zh: '6/20 第二部 一般 ─ 甜心女僕｜OPEN 13:00 / START 13:30　NT$ 3,500',
+          en: '6/20 Session 2 General ─ Sweet Maid｜OPEN 13:00 / START 13:30　NT$ 3,500',
+          ja: '6/20 第2部 一般 ─ スイートメイド｜OPEN 13:00 / START 13:30　NT$ 3,500',
+        }
+      },
+      {
+        value: '6/21 第三部 VIP Ticket（魅惑兔娘）OPEN 12:30／START 13:00（7,500 NTD）',
+        label: {
+          zh: '6/21 第三部 VIP ─ 魅惑兔娘｜OPEN 12:30 / START 13:00　NT$ 7,500',
+          en: '6/21 Session 3 VIP ─ Enchanting Bunny Girl｜OPEN 12:30 / START 13:00　NT$ 7,500',
+          ja: '6/21 第3部 VIP ─ 魅惑バニーガール｜OPEN 12:30 / START 13:00　NT$ 7,500',
+        }
+      },
+      {
+        value: '6/21 第三部 一般 Ticket（魅惑兔娘）OPEN 12:30／START 13:00（3,500 NTD）',
+        label: {
+          zh: '6/21 第三部 一般 ─ 魅惑兔娘｜OPEN 12:30 / START 13:00　NT$ 3,500',
+          en: '6/21 Session 3 General ─ Enchanting Bunny Girl｜OPEN 12:30 / START 13:00　NT$ 3,500',
+          ja: '6/21 第3部 一般 ─ 魅惑バニーガール｜OPEN 12:30 / START 13:00　NT$ 3,500',
+        }
+      },
+      {
+        value: 'VIP Full Set（21,000 NTD）',
+        label: {
+          zh: '★ VIP Full Set（三場通）　NT$ 21,000',
+          en: '★ VIP Full Set (All 3 Sessions)　NT$ 21,000',
+          ja: '★ VIP Full Set（三部通し）　NT$ 21,000',
+        }
+      },
+      {
+        value: 'General Full Set（9,000 NTD）',
+        label: {
+          zh: '★ General Full Set（三場通）　NT$ 9,000',
+          en: '★ General Full Set (All 3 Sessions)　NT$ 9,000',
+          ja: '★ General Full Set（三部通し）　NT$ 9,000',
+        }
+      },
+    ]
+  },
+  gpn: {
+    entry: 'entry.1301891929',
+    items: [
+      {
+        value: 'VVIP Ticket（10000 NTD）',
+        label: {
+          zh: 'VVIP Ticket　NT$ 10,000',
+          en: 'VVIP Ticket　NT$ 10,000',
+          ja: 'VVIP Ticket　NT$ 10,000',
+        }
+      },
+      {
+        value: 'VIP Ticket（6000 NTD）',
+        label: {
+          zh: 'VIP Ticket　NT$ 6,000',
+          en: 'VIP Ticket　NT$ 6,000',
+          ja: 'VIP Ticket　NT$ 6,000',
+        }
+      },
+      {
+        value: '一般 Ticket（2500 NTD）',
+        label: {
+          zh: '一般 Ticket　NT$ 2,500',
+          en: 'General Ticket　NT$ 2,500',
+          ja: '一般 Ticket　NT$ 2,500',
+        }
+      },
+    ]
+  },
+  sap: {
+    entry: 'entry.997534253',
+    items: [
+      {
+        value: 'Ticket（6000 NTD）',
+        label: {
+          zh: 'Secret After Party Ticket　NT$ 6,000',
+          en: 'Secret After Party Ticket　NT$ 6,000',
+          ja: 'Secret After Party Ticket　NT$ 6,000',
+        }
+      },
+    ]
+  }
+};
+
+// ═══════════════════════════════════════════
+//  Language Application
+// ═══════════════════════════════════════════
+let currentLang = 'zh';
+
+function setLang(lang) {
+  currentLang = lang;
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.lang === lang);
+  });
+  applyLang(lang);
+  renderTicketCheckboxes(lang);
+  updatePlaceholders(lang);
+}
+
+function applyLang(lang) {
+  const t = T[lang];
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.dataset.i18n;
+    if (t[key] !== undefined) el.textContent = t[key];
+  });
+  // Update html lang attribute
+  const langMap = { zh: 'zh-TW', en: 'en', ja: 'ja' };
+  document.documentElement.lang = langMap[lang];
+}
+
+function updatePlaceholders(lang) {
+  const t = T[lang];
+  document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+    const key = el.dataset.i18nPlaceholder;
+    if (t[key] !== undefined) el.placeholder = t[key];
+  });
+}
+
+function renderTicketCheckboxes(lang) {
+  ['cft', 'gpn', 'sap'].forEach(group => {
+    const container = document.getElementById(group + '-checks');
+    if (!container) return;
+    const { entry, items } = TICKETS[group];
+    container.innerHTML = items.map(item => `
+      <label class="checkbox-item">
+        <input type="checkbox" name="${entry}" value="${item.value}">
+        <span class="checkbox-label">${item.label[lang] || item.label.zh}</span>
+      </label>
+    `).join('');
+  });
+}
+
+// ═══════════════════════════════════════════
+//  Countdown Timer
+// ═══════════════════════════════════════════
+function updateCountdown() {
+  // Target: 2026-05-23 11:59:59 GMT+8
+  const target = new Date('2026-05-23T11:59:59+08:00').getTime();
+  const now = Date.now();
+  const diff = target - now;
+
+  if (diff <= 0) {
+    document.getElementById('cd-days').textContent  = '00';
+    document.getElementById('cd-hours').textContent = '00';
+    document.getElementById('cd-mins').textContent  = '00';
+    document.getElementById('cd-secs').textContent  = '00';
+    return;
+  }
+
+  const d = Math.floor(diff / 86400000);
+  const h = Math.floor((diff % 86400000) / 3600000);
+  const m = Math.floor((diff % 3600000) / 60000);
+  const s = Math.floor((diff % 60000) / 1000);
+
+  document.getElementById('cd-days').textContent  = String(d).padStart(2,'0');
+  document.getElementById('cd-hours').textContent = String(h).padStart(2,'0');
+  document.getElementById('cd-mins').textContent  = String(m).padStart(2,'0');
+  document.getElementById('cd-secs').textContent  = String(s).padStart(2,'0');
+}
+
+// ═══════════════════════════════════════════
+//  Form Submission
+// ═══════════════════════════════════════════
+let formSubmitted = false;
+
+function handleSubmit() {
+  formSubmitted = true;
+}
+
+document.getElementById('hidden_iframe').addEventListener('load', function() {
+  if (formSubmitted) {
+    formSubmitted = false;
+    showModal();
+  }
+});
+
+function showModal() {
+  document.getElementById('success-modal').classList.add('show');
+  document.getElementById('regForm').reset();
+}
+
+function closeModal() {
+  document.getElementById('success-modal').classList.remove('show');
+}
+
+// ═══════════════════════════════════════════
+//  Hero Image Detection
+// ═══════════════════════════════════════════
+function checkHeroImage() {
+  const img = document.getElementById('hero-img');
+  img.onload = function() {
+    document.getElementById('hero-img-wrap').style.display = 'block';
+    document.getElementById('hero-placeholder').style.display = 'none';
+  };
+  img.onerror = function() {
+    document.getElementById('hero-img-wrap').style.display = 'none';
+    document.getElementById('hero-placeholder').style.display = 'flex';
+  };
+}
+
+// ═══════════════════════════════════════════
+//  Init
+// ═══════════════════════════════════════════
+document.addEventListener('DOMContentLoaded', function() {
+  setLang('zh');
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+  checkHeroImage();
+});
+</script>
+</body>
+</html>
