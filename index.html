@@ -122,7 +122,6 @@ nav {
   width: 100%; display: block;
   object-fit: cover;
 }
-/* Fallback gradient when image not present */
 .hero-image-placeholder {
   width: min(480px, 90vw);
   height: min(600px, 80vw);
@@ -869,8 +868,7 @@ footer .footer-logo {
         <ul class="ticket-benefits">
           <li data-i18n="cft_vip_b1">個別交流時間 3 分鐘</li>
           <li data-i18n="cft_vip_b2">手機影片拍攝（30秒）</li>
-          <li data-i18n="cft_vip_b3">雙人拍立得 1 枚</li>
-          <li data-i18n="cft_vip_b4">Pose 選擇：臉頰貼貼 / 甜蜜擁抱 / 親密勾手</li>
+          <li data-i18n="cft_vip_b3">雙人拍立得 1 枚（Pose 選擇：臉頰貼貼 / 甜蜜擁抱 / 親密勾手）</li>
         </ul>
       </div>
       <div class="ticket-card">
@@ -879,8 +877,7 @@ footer .footer-logo {
         <div class="ticket-limit" data-i18n="cft_gen_limit">每場限定15名</div>
         <ul class="ticket-benefits">
           <li data-i18n="cft_gen_b1">個別交流時間 1 分鐘</li>
-          <li data-i18n="cft_gen_b2">雙人拍立得 1 枚</li>
-          <li data-i18n="cft_gen_b3">Pose 選擇：勾指 / 愛心Pose</li>
+          <li data-i18n="cft_gen_b2">雙人拍立得 1 枚（Pose 選擇：勾指 / 愛心Pose）</li>
         </ul>
       </div>
     </div>
@@ -1015,8 +1012,7 @@ footer .footer-logo {
           <span data-i18n="cft_title">Camera Fever Time</span>
           <span style="font-weight:300;color:var(--text-light);font-size:0.8rem;" data-i18n="form_multi_hint">（可複選）</span>
         </div>
-        <div class="checkbox-list" id="cft-checks">
-          </div>
+        <div class="checkbox-list" id="cft-checks"></div>
       </div>
 
       <div class="ticket-sub-section">
@@ -1025,8 +1021,7 @@ footer .footer-logo {
           <span data-i18n="gpn_title_short">Gorgeous Party Night</span>
           <span style="font-weight:300;color:var(--text-light);font-size:0.8rem;" data-i18n="form_multi_hint">（可複選）</span>
         </div>
-        <div class="checkbox-list" id="gpn-checks">
-          </div>
+        <div class="checkbox-list" id="gpn-checks"></div>
       </div>
 
       <div class="ticket-sub-section">
@@ -1034,8 +1029,7 @@ footer .footer-logo {
           <span class="dot">✦</span>
           <span data-i18n="sap_title_short">Secret After Party</span>
         </div>
-        <div class="checkbox-list" id="sap-checks">
-          </div>
+        <div class="checkbox-list" id="sap-checks"></div>
       </div>
 
       <hr class="divider" style="margin:28px 0">
@@ -1129,12 +1123,10 @@ const T = {
     cft_vip_limit: '每場限定10名',
     cft_vip_b1: '個別交流時間 3 分鐘',
     cft_vip_b2: '手機影片拍攝（30秒）',
-    cft_vip_b3: '雙人拍立得 1 枚',
-    cft_vip_b4: 'Pose 選擇：臉頰貼貼 / 甜蜜擁抱 / 親密勾手',
+    cft_vip_b3: '雙人拍立得 1 枚（Pose 選擇：臉頰貼貼 / 甜蜜擁抱 / 親密勾手）',
     cft_gen_limit: '每場限定15名',
     cft_gen_b1: '個別交流時間 1 分鐘',
-    cft_gen_b2: '雙人拍立得 1 枚',
-    cft_gen_b3: 'Pose 選擇：勾指 / 愛心Pose',
+    cft_gen_b2: '雙人拍立得 1 枚（Pose 選擇：勾指 / 愛心Pose）',
     cft_vip_set_note: '包含三場 VIP Ticket + VIP 全通特典',
     cft_gen_set_note: '包含三場 Camera Fever Time 一般 Ticket',
     gpn_date_tag: '6/20 SATURDAY',
@@ -1219,12 +1211,10 @@ const T = {
     cft_vip_limit: 'Limited to 10 per session',
     cft_vip_b1: '3-minute private interaction',
     cft_vip_b2: 'Mobile video recording (30 sec)',
-    cft_vip_b3: 'Two-shot instant photo (1 piece)',
-    cft_vip_b4: 'Choose pose: Cheek-to-cheek / Sweet hug / Arm-in-arm',
+    cft_vip_b3: 'Two-shot instant photo — Pose: Cheek-to-cheek / Sweet hug / Arm-in-arm',
     cft_gen_limit: 'Limited to 15 per session',
     cft_gen_b1: '1-minute private interaction',
-    cft_gen_b2: 'Two-shot instant photo (1 piece)',
-    cft_gen_b3: 'Choose pose: Pinky promise / Heart pose',
+    cft_gen_b2: 'Two-shot instant photo — Pose: Pinky promise / Heart pose',
     cft_vip_set_note: 'Includes VIP Tickets for all 3 sessions + Full-pass VIP bonus',
     cft_gen_set_note: 'Includes General Tickets for all 3 Camera Fever Time sessions',
     gpn_date_tag: '6/20 SATURDAY',
@@ -1309,12 +1299,10 @@ const T = {
     cft_vip_limit: '各部限定10名',
     cft_vip_b1: '個別交流時間 3分',
     cft_vip_b2: '携帯撮影（30秒）',
-    cft_vip_b3: 'ツーショットチェキ1枚',
-    cft_vip_b4: 'ポーズ選択：頬寄せ / エアハグ / 腕組み',
+    cft_vip_b3: 'ツーショットチェキ1枚（ポーズ選択：頬寄せ / エアハグ / 腕組み）',
     cft_gen_limit: '各部限定15名',
     cft_gen_b1: '個別交流時間 1分',
-    cft_gen_b2: 'ツーショットチェキ1枚',
-    cft_gen_b3: 'ポーズ選択：指切り / ハートポーズ',
+    cft_gen_b2: 'ツーショットチェキ1枚（ポーズ選択：指切り / ハートポーズ）',
     cft_vip_set_note: 'Camera Fever Time VIP Ticket 三部通しセット ＋ VIP全通特典付き',
     cft_gen_set_note: 'Camera Fever Time 一般 Ticket 三部通しセット',
     gpn_date_tag: '6/20 SATURDAY',
@@ -1371,7 +1359,7 @@ const T = {
 };
 
 // ═══════════════════════════════════════════
-//  Ticket Data (checkbox values = exact Google Form values)
+//  Ticket Data
 // ═══════════════════════════════════════════
 const TICKETS = {
   cft: {
@@ -1505,12 +1493,10 @@ function applyLang(lang) {
     const key = el.dataset.i18n;
     if (t[key] !== undefined) el.textContent = t[key];
   });
-  // Handle elements that contain HTML (e.g. links inside hint text)
   document.querySelectorAll('[data-i18n-html]').forEach(el => {
     const key = el.dataset.i18nHtml;
     if (t[key] !== undefined) el.innerHTML = t[key];
   });
-  // Update html lang attribute
   const langMap = { zh: 'zh-TW', en: 'en', ja: 'ja' };
   document.documentElement.lang = langMap[lang];
 }
@@ -1541,7 +1527,6 @@ function renderTicketCheckboxes(lang) {
 //  Countdown Timer
 // ═══════════════════════════════════════════
 function updateCountdown() {
-  // Target: 2026-05-23 11:59:59 GMT+8
   const target = new Date('2026-05-22T11:59:59+08:00').getTime();
   const now = Date.now();
   const diff = target - now;
@@ -1576,7 +1561,6 @@ document.getElementById('regForm').addEventListener('submit', async function(e) 
   const form = this;
   const btn  = form.querySelector('.btn-submit');
 
-  // Visual feedback while sending
   btn.disabled = true;
   const originalText = btn.textContent;
   btn.textContent = currentLang === 'zh' ? '送出中 …' : (currentLang === 'ja' ? '送信中 …' : 'Sending …');
@@ -1584,33 +1568,27 @@ document.getElementById('regForm').addEventListener('submit', async function(e) 
   try {
     const formData = new FormData(form);
     const params = new URLSearchParams();
-    
-    // Append standard text inputs
-    params.append('name', formData.get('name') || '');
+
+    params.append('name',  formData.get('name')  || '');
     params.append('email', formData.get('email') || '');
     params.append('phone', formData.get('phone') || '');
-    params.append('ig', formData.get('ig') || '');
+    params.append('ig',    formData.get('ig')    || '');
     params.append('xcity', formData.get('xcity') || '');
     params.append('notes', formData.get('notes') || '');
 
-    // Gather selected tickets and join them by newline
     const selectedTickets = [];
     form.querySelectorAll('input[name="ticket_options"]:checked').forEach(cb => {
       selectedTickets.push(cb.value);
     });
     params.append('tickets', selectedTickets.join('\n'));
 
-    // Send data to GAS API
     await fetch(GAS_API_URL, {
       method: 'POST',
       body: params,
       mode: 'no-cors',
-      headers: {
-        'Content-Type': 'application/x-www-form-urlencoded'
-      }
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
     });
 
-    // Show success modal & reset form
     showModal();
     form.reset();
     renderTicketCheckboxes(currentLang);
@@ -1619,7 +1597,6 @@ document.getElementById('regForm').addEventListener('submit', async function(e) 
     console.error('API 留單發生錯誤:', err);
     alert(currentLang === 'zh' ? '報名系統忙碌中，請稍後再試。' : 'System busy, please try again later.');
   } finally {
-    // Restore button state
     btn.disabled = false;
     btn.textContent = originalText;
   }
@@ -1634,33 +1611,28 @@ function closeModal() {
 }
 
 // ═══════════════════════════════════════════
-//  Hero Image Detection (修復快取導致的載入錯過問題)
+//  Hero Image Detection
 // ═══════════════════════════════════════════
 function checkHeroImage() {
   const img = document.getElementById('hero-img');
-  
-  // 定義顯示圖片的函式
+
   const showImg = function() {
     document.getElementById('hero-img-wrap').style.display = 'block';
     document.getElementById('hero-placeholder').style.display = 'none';
   };
-
-  // 定義顯示替代底圖的函式
   const showPlaceholder = function() {
     document.getElementById('hero-img-wrap').style.display = 'none';
     document.getElementById('hero-placeholder').style.display = 'flex';
   };
 
-  // 1. 綁定監聽器（處理首次載入或網路較慢的情況）
   img.onload = showImg;
   img.onerror = showPlaceholder;
 
-  // 2. 關鍵修復：如果圖片已經被瀏覽器快取秒殺載入，直接手動觸發
   if (img.complete) {
     if (img.naturalWidth > 0) {
-      showImg(); // 圖片有實際寬度，代表成功載入
+      showImg();
     } else {
-      showPlaceholder(); // 圖片破圖或路徑失效
+      showPlaceholder();
     }
   }
 }
