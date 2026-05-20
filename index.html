@@ -1576,11 +1576,21 @@ document.getElementById('regForm').addEventListener('submit', async function(e) 
     params.append('xcity', formData.get('xcity') || '');
     params.append('notes', formData.get('notes') || '');
 
+    // 收集多選票券：依據票種自動加上 Emoji，並用「雙換行 \n\n」隔開
     const selectedTickets = [];
     form.querySelectorAll('input[name="ticket_options"]:checked').forEach(cb => {
-      selectedTickets.push(cb.value);
+      let prefix = '🎟️ '; // 一般票預設圖示
+      
+      // 依據選項名稱判斷加上專屬 Emoji
+      if (cb.value.includes('VVIP') || cb.value.includes('Full Set')) {
+        prefix = '👑 ';
+      } else if (cb.value.includes('VIP')) {
+        prefix = '✨ ';
+      }
+      
+      selectedTickets.push(prefix + cb.value);
     });
-    params.append('tickets', selectedTickets.join('\n'));
+    params.append('tickets', selectedTickets.join('\n\n'));
 
     await fetch(GAS_API_URL, {
       method: 'POST',
