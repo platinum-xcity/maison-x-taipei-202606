@@ -1633,18 +1633,35 @@ function closeModal() {
 }
 
 // ═══════════════════════════════════════════
-//  Hero Image Detection
+//  Hero Image Detection (修復快取導致的載入錯過問題)
 // ═══════════════════════════════════════════
 function checkHeroImage() {
   const img = document.getElementById('hero-img');
-  img.onload = function() {
+  
+  // 定義顯示圖片的函式
+  const showImg = function() {
     document.getElementById('hero-img-wrap').style.display = 'block';
     document.getElementById('hero-placeholder').style.display = 'none';
   };
-  img.onerror = function() {
+
+  // 定義顯示替代底圖的函式
+  const showPlaceholder = function() {
     document.getElementById('hero-img-wrap').style.display = 'none';
     document.getElementById('hero-placeholder').style.display = 'flex';
   };
+
+  // 1. 綁定監聽器（處理首次載入或網路較慢的情況）
+  img.onload = showImg;
+  img.onerror = showPlaceholder;
+
+  // 2. 關鍵修復：如果圖片已經被瀏覽器快取秒殺載入，直接手動觸發
+  if (img.complete) {
+    if (img.naturalWidth > 0) {
+      showImg(); // 圖片有實際寬度，代表成功載入
+    } else {
+      showPlaceholder(); // 圖片破圖或路徑失效
+    }
+  }
 }
 
 // ═══════════════════════════════════════════
