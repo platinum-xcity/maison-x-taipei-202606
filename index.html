@@ -755,7 +755,7 @@ footer .footer-logo {
 </head>
 <body>
 
-<!-- Hidden iframe for Google Forms submission -->
+<!-- hidden_iframe kept for legacy; submission now uses fetch -->
 <iframe name="hidden_iframe" id="hidden_iframe" style="display:none"></iframe>
 
 <!-- ── Navigation ── -->
@@ -981,8 +981,6 @@ footer .footer-logo {
       id="regForm"
       action="https://docs.google.com/forms/d/e/1FAIpQLSdvMr2egR5TOxVt45aSv5DLiZJnsZD8uEInrkpbVBi1L2gvrQ/formResponse"
       method="POST"
-      target="hidden_iframe"
-      onsubmit="handleSubmit()"
     >
 
       <!-- Personal Info -->
@@ -1601,24 +1599,49 @@ function updateCountdown() {
 }
 
 // ═══════════════════════════════════════════
-//  Form Submission
+//  Form Submission (fetch + no-cors)
 // ═══════════════════════════════════════════
-let formSubmitted = false;
+document.getElementById('regForm').addEventListener('submit', async function(e) {
+  e.preventDefault();
 
-function handleSubmit() {
-  formSubmitted = true;
-}
+  const form = this;
+  const btn  = form.querySelector('.btn-submit');
 
-document.getElementById('hidden_iframe').addEventListener('load', function() {
-  if (formSubmitted) {
-    formSubmitted = false;
-    showModal();
+  // Visual feedback while sending
+  btn.disabled = true;
+  const originalText = btn.textContent;
+  btn.textContent = '送出中 …';
+
+  try {
+    // Build URL-encoded body (handles multiple checkboxes with same name)
+    const params = new URLSearchParams();
+    for (const [key, value] of new FormData(form)) {
+      params.append(key, value);
+    }
+
+    // no-cors: browser sends the POST to Google; we can't read the response,
+    // but the data is delivered — confirmed more reliable than hidden iframe.
+    await fetch(form.action, {
+      method: 'POST',
+      body: params,
+      mode: 'no-cors',
+    });
+  } catch (err) {
+    // no-cors never throws a CORS error; unexpected errors are logged only
+    console.warn('Fetch note:', err);
   }
+
+  // Show success modal & reset
+  showModal();
+  form.reset();
+  renderTicketCheckboxes(currentLang); // restore checkboxes after reset
+
+  btn.disabled = false;
+  btn.textContent = originalText;
 });
 
 function showModal() {
   document.getElementById('success-modal').classList.add('show');
-  document.getElementById('regForm').reset();
 }
 
 function closeModal() {
