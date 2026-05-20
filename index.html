@@ -982,6 +982,10 @@ footer .footer-logo {
       action="https://docs.google.com/forms/d/e/1FAIpQLSdvMr2egR5TOxVt45aSv5DLiZJnsZD8uEInrkpbVBi1L2gvrQ/formResponse"
       method="POST"
     >
+      <!-- Required hidden fields for Google Forms to accept the submission -->
+      <input type="hidden" name="fvv" value="1">
+      <input type="hidden" name="pageHistory" value="0">
+      <input type="hidden" name="fbzx" id="fbzx_field" value="0">
 
       <!-- Personal Info -->
       <div class="form-group">
@@ -1671,6 +1675,8 @@ document.addEventListener('DOMContentLoaded', function() {
   updateCountdown();
   setInterval(updateCountdown, 1000);
   checkHeroImage();
+  // Generate unique fbzx token required by Google Forms
+  document.getElementById('fbzx_field').value = Math.floor(Math.random() * 9007199254740991);
 });
 </script>
 </body>
