@@ -755,10 +755,6 @@ footer .footer-logo {
 </head>
 <body>
 
-<!-- hidden_iframe kept for legacy; submission now uses fetch -->
-<iframe name="hidden_iframe" id="hidden_iframe" style="display:none"></iframe>
-
-<!-- ── Navigation ── -->
 <nav>
   <div class="nav-logo">MAISON <span class="logo-x">X</span></div>
   <div class="lang-switcher">
@@ -768,14 +764,11 @@ footer .footer-logo {
   </div>
 </nav>
 
-<!-- ── Hero ── -->
 <section class="hero">
-  <!-- Replace main-visual.jpg with your poster image in the same folder -->
   <div class="hero-image-wrap" id="hero-img-wrap" style="display:none">
     <img src="main-visual.jpg" alt="大槻響 Maison X Special in TAIPEI" id="hero-img">
   </div>
   <div class="hero-image-placeholder" id="hero-placeholder">
-    <!-- Image placeholder: place main-visual.jpg in same folder -->
     ✦ MAISON X ✦<br><br>
     <small style="font-size:0.75rem; opacity:0.6;">Place main-visual.jpg<br>in the same folder</small>
   </div>
@@ -791,7 +784,6 @@ footer .footer-logo {
   </div>
 </section>
 
-<!-- ── Countdown ── -->
 <section class="countdown-section">
   <p class="countdown-title" data-i18n="countdown_title">先行販售截止倒數</p>
   <div class="countdown-grid">
@@ -821,7 +813,6 @@ footer .footer-logo {
   </p>
 </section>
 
-<!-- ── About ── -->
 <section class="section" id="member-section">
   <p class="section-title" data-i18n="section_about_tag">Event Info</p>
   <h2 class="section-heading" data-i18n="section_about">關於活動</h2>
@@ -861,12 +852,10 @@ footer .footer-logo {
   </div>
 </section>
 
-<!-- ── Tickets ── -->
 <section class="section" style="padding-top:0">
   <p class="section-title" data-i18n="section_tickets_tag">Ticket Info</p>
   <h2 class="section-heading" data-i18n="section_tickets">票券介紹</h2>
 
-  <!-- Camera Fever Time -->
   <div class="event-block">
     <span class="event-tag" data-i18n="cft_date_tag">6/20 &amp; 6/21</span>
     <div class="event-name" data-i18n="cft_title">✦ Camera Fever Time ✦</div>
@@ -908,7 +897,6 @@ footer .footer-logo {
     </div>
   </div>
 
-  <!-- Gorgeous Party Night -->
   <div class="event-block">
     <span class="event-tag" data-i18n="gpn_date_tag">6/20 SATURDAY</span>
     <div class="event-name" data-i18n="gpn_title">✦ Gorgeous Party Night ✦</div>
@@ -951,7 +939,6 @@ footer .footer-logo {
     </div>
   </div>
 
-  <!-- Secret After Party -->
   <div class="event-block">
     <span class="event-tag" data-i18n="sap_date_tag">6/21 SUNDAY</span>
     <div class="event-name" data-i18n="sap_title">✦ Secret After Party ✦</div>
@@ -970,30 +957,19 @@ footer .footer-logo {
   </div>
 </section>
 
-<!-- ── Registration Form ── -->
 <section class="section" id="form-section">
   <p class="section-title" data-i18n="section_form_tag">Registration</p>
   <h2 class="section-heading" data-i18n="section_form">報名表</h2>
   <p class="form-required-note" data-i18n="form_required">* 為必填欄位，請勿填寫密碼</p>
 
   <div class="form-wrap">
-    <form
-      id="regForm"
-      action="https://docs.google.com/forms/d/e/1FAIpQLSdvMr2egR5TOxVt45aSv5DLiZJnsZD8uEInrkpbVBi1L2gvrQ/formResponse"
-      method="POST"
-    >
-      <!-- Required hidden fields for Google Forms to accept the submission -->
-      <input type="hidden" name="fvv" value="1">
-      <input type="hidden" name="pageHistory" value="0">
-      <input type="hidden" name="fbzx" id="fbzx_field" value="0">
-
-      <!-- Personal Info -->
+    <form id="regForm">
       <div class="form-group">
         <label class="form-label" for="f-name">
           <span data-i18n="form_name">姓名（本名）</span><span class="req">*</span>
         </label>
         <p class="form-hint" data-i18n="form_name_hint">現場進行本人身份核對</p>
-        <input class="form-input" type="text" id="f-name" name="entry.459445623"
+        <input class="form-input" type="text" id="f-name" name="name"
           required placeholder="" data-i18n-placeholder="form_name_ph">
       </div>
 
@@ -1001,7 +977,7 @@ footer .footer-logo {
         <label class="form-label" for="f-email">
           <span data-i18n="form_email">Email</span><span class="req">*</span>
         </label>
-        <input class="form-input" type="email" id="f-email" name="entry.131568661"
+        <input class="form-input" type="email" id="f-email" name="email"
           required placeholder="your@email.com">
       </div>
 
@@ -1009,7 +985,7 @@ footer .footer-logo {
         <label class="form-label" for="f-phone">
           <span data-i18n="form_phone">聯絡電話</span><span class="req">*</span>
         </label>
-        <input class="form-input" type="tel" id="f-phone" name="entry.1487894842"
+        <input class="form-input" type="tel" id="f-phone" name="phone"
           required placeholder="+886 912 345 678" data-i18n-placeholder="form_phone_ph">
       </div>
 
@@ -1017,7 +993,7 @@ footer .footer-logo {
         <label class="form-label" for="f-ig">
           <span data-i18n="form_ig">Instagram 帳號</span>
         </label>
-        <input class="form-input" type="text" id="f-ig" name="entry.775833818"
+        <input class="form-input" type="text" id="f-ig" name="ig"
           placeholder="@username">
       </div>
 
@@ -1026,13 +1002,12 @@ footer .footer-logo {
           <span data-i18n="form_xcity">XCITY 會員 Email</span><span class="req">*</span>
         </label>
         <p class="form-hint" data-i18n-html="form_xcity_hint">如還未加入會員，<a href="#member-section" style="color:var(--gold);text-decoration:underline;text-underline-offset:2px;">請加入</a></p>
-        <input class="form-input" type="email" id="f-xcity" name="entry.727870154"
+        <input class="form-input" type="email" id="f-xcity" name="xcity"
           required placeholder="" data-i18n-placeholder="form_xcity_ph">
       </div>
 
       <hr class="divider" style="margin:28px 0">
 
-      <!-- Camera Fever Time Tickets -->
       <div class="ticket-sub-section">
         <div class="ticket-sub-title">
           <span class="dot">✦</span>
@@ -1040,11 +1015,9 @@ footer .footer-logo {
           <span style="font-weight:300;color:var(--text-light);font-size:0.8rem;" data-i18n="form_multi_hint">（可複選）</span>
         </div>
         <div class="checkbox-list" id="cft-checks">
-          <!-- Rendered by JS -->
-        </div>
+          </div>
       </div>
 
-      <!-- Gorgeous Party Night Tickets -->
       <div class="ticket-sub-section">
         <div class="ticket-sub-title">
           <span class="dot">✦</span>
@@ -1052,30 +1025,26 @@ footer .footer-logo {
           <span style="font-weight:300;color:var(--text-light);font-size:0.8rem;" data-i18n="form_multi_hint">（可複選）</span>
         </div>
         <div class="checkbox-list" id="gpn-checks">
-          <!-- Rendered by JS -->
-        </div>
+          </div>
       </div>
 
-      <!-- Secret After Party Tickets -->
       <div class="ticket-sub-section">
         <div class="ticket-sub-title">
           <span class="dot">✦</span>
           <span data-i18n="sap_title_short">Secret After Party</span>
         </div>
         <div class="checkbox-list" id="sap-checks">
-          <!-- Rendered by JS -->
-        </div>
+          </div>
       </div>
 
       <hr class="divider" style="margin:28px 0">
 
-      <!-- Notes -->
       <div class="form-group">
         <label class="form-label" for="f-notes">
           <span data-i18n="form_notes">備考欄</span>
         </label>
         <p class="form-hint" data-i18n="form_notes_hint">如有同行者資訊、特殊需求，請於此填寫</p>
-        <textarea class="form-textarea" id="f-notes" name="entry.1443947797"
+        <textarea class="form-textarea" id="f-notes" name="notes"
           rows="4" placeholder="" data-i18n-placeholder="form_notes_ph"></textarea>
       </div>
 
@@ -1084,7 +1053,6 @@ footer .footer-logo {
   </div>
 </section>
 
-<!-- ── Notes (below registration form) ── -->
 <div style="max-width:860px; margin:0 auto; padding:0 24px 60px;">
   <div style="background: linear-gradient(135deg, #FFF9F5, #FEF4F4); border-radius:20px; padding: 40px 32px;">
     <p class="section-title" data-i18n="section_notes_tag">Important Notes</p>
@@ -1099,13 +1067,11 @@ footer .footer-logo {
   </div>
 </div>
 
-<!-- ── Floating Register Button ── -->
 <button class="fab-register" onclick="document.getElementById('form-section').scrollIntoView({behavior:'smooth'})">
   <span class="fab-icon">✦</span>
   馬上報名
 </button>
 
-<!-- ── Footer ── -->
 <footer>
   <div class="footer-logo">MAISON X</div>
   <div data-i18n="footer_by">Presented by XCITY</div>
@@ -1116,7 +1082,6 @@ footer .footer-logo {
   </div>
 </footer>
 
-<!-- ── Success Modal ── -->
 <div id="success-modal">
   <div class="modal-box">
     <div class="modal-icon">✦</div>
@@ -1409,7 +1374,6 @@ const T = {
 // ═══════════════════════════════════════════
 const TICKETS = {
   cft: {
-    entry: 'entry.553283965',
     items: [
       {
         value: '6/20 第一部 VIP （輕奢泳裝）OPEN 10:30／START 11:00（7,500 NTD）',
@@ -1478,7 +1442,6 @@ const TICKETS = {
     ]
   },
   gpn: {
-    entry: 'entry.1301891929',
     items: [
       {
         value: 'VVIP Ticket（10000 NTD）',
@@ -1507,7 +1470,6 @@ const TICKETS = {
     ]
   },
   sap: {
-    entry: 'entry.997534253',
     items: [
       {
         value: 'Ticket（6000 NTD）',
@@ -1564,10 +1526,10 @@ function renderTicketCheckboxes(lang) {
   ['cft', 'gpn', 'sap'].forEach(group => {
     const container = document.getElementById(group + '-checks');
     if (!container) return;
-    const { entry, items } = TICKETS[group];
+    const { items } = TICKETS[group];
     container.innerHTML = items.map(item => `
       <label class="checkbox-item">
-        <input type="checkbox" name="${entry}" value="${item.value}">
+        <input type="checkbox" name="ticket_options" value="${item.value}">
         <span class="checkbox-label">${item.label[lang] || item.label.zh}</span>
       </label>
     `).join('');
@@ -1603,8 +1565,10 @@ function updateCountdown() {
 }
 
 // ═══════════════════════════════════════════
-//  Form Submission (fetch + no-cors)
+//  Form Submission (Google Apps Script API)
 // ═══════════════════════════════════════════
+const GAS_API_URL = 'https://script.google.com/macros/s/AKfycbzbOWeCsndkkbduTld03J-mFaUw6USurwb54qGfySVV87acWMRkuXY5sl3rOHqEhgF9/exec';
+
 document.getElementById('regForm').addEventListener('submit', async function(e) {
   e.preventDefault();
 
@@ -1614,34 +1578,50 @@ document.getElementById('regForm').addEventListener('submit', async function(e) 
   // Visual feedback while sending
   btn.disabled = true;
   const originalText = btn.textContent;
-  btn.textContent = '送出中 …';
+  btn.textContent = currentLang === 'zh' ? '送出中 …' : (currentLang === 'ja' ? '送信中 …' : 'Sending …');
 
   try {
-    // Build URL-encoded body (handles multiple checkboxes with same name)
+    const formData = new FormData(form);
     const params = new URLSearchParams();
-    for (const [key, value] of new FormData(form)) {
-      params.append(key, value);
-    }
+    
+    // Append standard text inputs
+    params.append('name', formData.get('name') || '');
+    params.append('email', formData.get('email') || '');
+    params.append('phone', formData.get('phone') || '');
+    params.append('ig', formData.get('ig') || '');
+    params.append('xcity', formData.get('xcity') || '');
+    params.append('notes', formData.get('notes') || '');
 
-    // no-cors: browser sends the POST to Google; we can't read the response,
-    // but the data is delivered — confirmed more reliable than hidden iframe.
-    await fetch(form.action, {
+    // Gather selected tickets and join them by newline
+    const selectedTickets = [];
+    form.querySelectorAll('input[name="ticket_options"]:checked').forEach(cb => {
+      selectedTickets.push(cb.value);
+    });
+    params.append('tickets', selectedTickets.join('\n'));
+
+    // Send data to GAS API
+    await fetch(GAS_API_URL, {
       method: 'POST',
       body: params,
       mode: 'no-cors',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded'
+      }
     });
+
+    // Show success modal & reset form
+    showModal();
+    form.reset();
+    renderTicketCheckboxes(currentLang);
+
   } catch (err) {
-    // no-cors never throws a CORS error; unexpected errors are logged only
-    console.warn('Fetch note:', err);
+    console.error('API 留單發生錯誤:', err);
+    alert(currentLang === 'zh' ? '報名系統忙碌中，請稍後再試。' : 'System busy, please try again later.');
+  } finally {
+    // Restore button state
+    btn.disabled = false;
+    btn.textContent = originalText;
   }
-
-  // Show success modal & reset
-  showModal();
-  form.reset();
-  renderTicketCheckboxes(currentLang); // restore checkboxes after reset
-
-  btn.disabled = false;
-  btn.textContent = originalText;
 });
 
 function showModal() {
@@ -1675,8 +1655,6 @@ document.addEventListener('DOMContentLoaded', function() {
   updateCountdown();
   setInterval(updateCountdown, 1000);
   checkHeroImage();
-  // Generate unique fbzx token required by Google Forms
-  document.getElementById('fbzx_field').value = Math.floor(Math.random() * 9007199254740991);
 });
 </script>
 </body>
