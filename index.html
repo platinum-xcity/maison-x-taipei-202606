@@ -822,7 +822,7 @@ footer .footer-logo {
 </section>
 
 <!-- ── About ── -->
-<section class="section">
+<section class="section" id="member-section">
   <p class="section-title" data-i18n="section_about_tag">Event Info</p>
   <h2 class="section-heading" data-i18n="section_about">關於活動</h2>
   <p class="about-desc" data-i18n="about_desc">
@@ -1023,6 +1023,7 @@ footer .footer-logo {
         <label class="form-label" for="f-xcity">
           <span data-i18n="form_xcity">XCITY 會員 Email</span><span class="req">*</span>
         </label>
+        <p class="form-hint" data-i18n-html="form_xcity_hint">如還未加入會員，<a href="#member-section" style="color:var(--gold);text-decoration:underline;text-underline-offset:2px;">請加入</a></p>
         <input class="form-input" type="email" id="f-xcity" name="entry.727870154"
           required placeholder="" data-i18n-placeholder="form_xcity_ph">
       </div>
@@ -1206,6 +1207,7 @@ const T = {
     form_phone: '聯絡電話', form_phone_ph: '+886 912 345 678',
     form_ig: 'Instagram 帳號（選填）',
     form_xcity: 'XCITY 會員 Email', form_xcity_ph: 'XCITY 帳號所使用的 Email',
+    form_xcity_hint: '如還未加入會員，<a href="#member-section" style="color:var(--gold);text-decoration:underline;text-underline-offset:2px;">請加入</a>',
     form_multi_hint: '（可複選）',
     form_notes: '備考欄（選填）',
     form_notes_hint: '如有同行者資訊、特殊需求，請於此填寫',
@@ -1295,6 +1297,7 @@ const T = {
     form_phone: 'Phone Number', form_phone_ph: '+886 912 345 678',
     form_ig: 'Instagram Account (Optional)',
     form_xcity: 'XCITY Member Email', form_xcity_ph: 'Email used for your XCITY account',
+    form_xcity_hint: 'Not a member yet? <a href="#member-section" style="color:var(--gold);text-decoration:underline;text-underline-offset:2px;">Join here</a>',
     form_multi_hint: '(multiple selections allowed)',
     form_notes: 'Notes (Optional)',
     form_notes_hint: 'Companion info, special requests, or anything you\'d like to tell us',
@@ -1384,6 +1387,7 @@ const T = {
     form_phone: '電話番号', form_phone_ph: '+886 912 345 678',
     form_ig: 'インスタグラムアカウント（任意）',
     form_xcity: 'XCITY会員メールアドレス', form_xcity_ph: 'XCITY登録メールアドレス',
+    form_xcity_hint: '未入会の方は<a href="#member-section" style="color:var(--gold);text-decoration:underline;text-underline-offset:2px;">こちらをご確認ください</a>',
     form_multi_hint: '（複数選択可）',
     form_notes: '備考欄（任意）',
     form_notes_hint: '同伴者情報、特別なご要望などがあればご記入ください',
@@ -1535,6 +1539,11 @@ function applyLang(lang) {
   document.querySelectorAll('[data-i18n]').forEach(el => {
     const key = el.dataset.i18n;
     if (t[key] !== undefined) el.textContent = t[key];
+  });
+  // Handle elements that contain HTML (e.g. links inside hint text)
+  document.querySelectorAll('[data-i18n-html]').forEach(el => {
+    const key = el.dataset.i18nHtml;
+    if (t[key] !== undefined) el.innerHTML = t[key];
   });
   // Update html lang attribute
   const langMap = { zh: 'zh-TW', en: 'en', ja: 'ja' };
